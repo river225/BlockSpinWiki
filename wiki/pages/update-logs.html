@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/assets/css/theme.css">
-    <link rel="stylesheet" href="/assets/css/global.css">
-    <link rel="stylesheet" href="/assets/css/header.css">
-    <link rel="stylesheet" href="/assets/css/sidebar.css">
-    <link rel="stylesheet" href="/assets/css/page.css">
-    <title>Update Logs</title>
+    <title>PAGE TITLE</title>
+
+    <link rel="stylesheet" href="../../assets/css/global.css">
+    <link rel="stylesheet" href="../../assets/css/header.css">
+    <link rel="stylesheet" href="../../assets/css/sidebar.css">
+    <link rel="stylesheet" href="../../assets/css/page.css">
 </head>
 
 <body>
@@ -16,26 +16,24 @@
 <div id="header"></div>
 <div id="sidebar"></div>
 
-<script>
-    fetch("/wiki/header.html").then(r => r.text()).then(d => {
-        document.getElementById("header").innerHTML = d;
-    });
-    fetch("/wiki/sidebar.html").then(r => r.text()).then(d => {
-        document.getElementById("sidebar").innerHTML = d;
-    });
-</script>
-
 <main class="page-content">
-    <h1>Update Logs</h1>
-    <p></p>
+    <h1>PAGE TITLE</h1>
 </main>
 
 <div id="footer"></div>
 
 <script>
-    fetch("/wiki/footer.html").then(r => r.text()).then(d => {
-        document.getElementById("footer").innerHTML = d;
-    });
+    fetch("../header.html")
+        .then(r => r.text())
+        .then(d => document.getElementById("header").innerHTML = d);
+
+    fetch("../sidebar.html")
+        .then(r => r.text())
+        .then(d => document.getElementById("sidebar").innerHTML = d);
+
+    fetch("../footer.html")
+        .then(r => r.text())
+        .then(d => document.getElementById("footer").innerHTML = d);
 </script>
 
 </body>
